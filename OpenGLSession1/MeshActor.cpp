@@ -12,6 +12,5 @@ MeshActor::MeshActor()
 bool MeshActor::SetMesh(std::string MeshName)
 {
 	meshComponent->mesh = application->FindMesh(MeshName);
-	meshComponent->transform.SetPosition(glm::vec3(5, 0, 0));
 	return true;
 }

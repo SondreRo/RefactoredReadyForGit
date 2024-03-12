@@ -11,6 +11,7 @@ private:
 	
 	unsigned int viewMemoryLocation;
 	unsigned int projectionlLocation;
+	unsigned int viewPosLocation;
 
 	float yaw = -90;
 	float pitch = 0;

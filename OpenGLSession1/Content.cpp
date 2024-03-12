@@ -11,7 +11,7 @@ std::vector<std::shared_ptr<Mesh>> Content::CreateContent()
 
 
 	std::shared_ptr<Mesh> FelixCube = mesh_importer.LoadMesh("C:/Users/soroe/Documents/FelixCube.fbx");
-	//std::shared_ptr<Mesh> FelixCube 
+	//std::shared_ptr<Mesh> FelixCube = mesh_importer.LoadMesh("C:/Users/soroe/Documents/CubeNoTexture.fbx");
 	FelixCube->displayName = "FelixCubeMesh";
 	NewMesh.push_back(FelixCube);
 

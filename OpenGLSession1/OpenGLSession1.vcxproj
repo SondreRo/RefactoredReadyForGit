@@ -144,6 +144,7 @@
     <ClCompile Include="IRender.cpp" />
     <ClCompile Include="MeshActor.cpp" />
     <ClCompile Include="MeshComponent.cpp" />
+    <ClCompile Include="MeshGenerator.cpp" />
     <ClCompile Include="MeshImporter.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="stb_image.cpp" />
@@ -246,6 +247,7 @@
     <ClInclude Include="IRender.h" />
     <ClInclude Include="MeshActor.h" />
     <ClInclude Include="MeshComponent.h" />
+    <ClInclude Include="MeshGenerator.h" />
     <ClInclude Include="MeshImporter.h" />
     <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="Texture.h" />

@@ -39,7 +39,6 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 }
 void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 {
-	std::cout << "Mouse Move " << xpos << " " << ypos << std::endl;
 	application.Currentcamera.get()->AddRotation(static_cast<float>(xpos), static_cast<float>(ypos));
 }
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)

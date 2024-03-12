@@ -9,6 +9,7 @@
 #include "Actor.h"
 #include "MeshActor.h"
 #include "Camera.h"
+#include "MeshImporter.h"
 
 Application::Application()
 {
@@ -21,7 +22,7 @@ void Application::CreateActors()
 	mesh_actor->Setup(std::make_shared<Application>(*this));
 	mesh_actor->Name = "FelixCubeActor";
 	mesh_actor->SetMesh("FelixCubeMesh");
-	mesh_actor->transform.AddYaw(10);
+	mesh_actor->transform.SetPosition(glm::vec3(10, 0, 0));
 	actors.push_back(mesh_actor);
 
 
@@ -49,7 +50,7 @@ void Application::Setup()
 
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
-
+	
 
 
 	glfwMakeContextCurrent(window);
@@ -115,7 +116,9 @@ void Application::Update(float DeltaTime)
 {
 	for (auto actor : actors)
 	{
-		actor->transform.AddYaw(90 * DeltaTime);
+		//actor->transform.AddYaw(90 * DeltaTime);
+		actor->transform.AddPitch(90 * DeltaTime);
+		actor->transform.AddYaw(10 * DeltaTime);
 		actor->Update(actor->transform);
 	}
 }

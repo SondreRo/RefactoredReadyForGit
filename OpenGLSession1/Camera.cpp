@@ -1,4 +1,6 @@
 #include "Camera.h"
+
+#include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
 #include "glad/glad.h"
 #include "glm/gtc/type_ptr.hpp"
@@ -7,15 +9,14 @@
 
 Camera::Camera(unsigned inShaderProgram)
 {
-    viewMemoryLocation = glGetUniformLocation(inShaderProgram, "view");
-    projectionlLocation = glGetUniformLocation(inShaderProgram, "projection");
-
+    AddShaderProgramPath(inShaderProgram);
 }
 
 void Camera::AddShaderProgramPath(unsigned inShaderProgram)
 {
     viewMemoryLocation = glGetUniformLocation(inShaderProgram, "view");
     projectionlLocation = glGetUniformLocation(inShaderProgram, "projection");
+    viewPosLocation = glGetUniformLocation(inShaderProgram, "viewPos");
 }
 
 
@@ -29,6 +30,8 @@ void Camera::tick(float DeltaTime)
 
     glm::mat4 view = glm::lookAt(WorldLocation, WorldLocation + cameraFront, cameraUp);
     glUniformMatrix4fv(viewMemoryLocation, 1, GL_FALSE, glm::value_ptr(view));
+
+    glUniform3fv(viewPosLocation, 1 , glm::value_ptr(GetLocation()));
 }
 
 void Camera::AddMovement(glm::vec3 Direction, float Speed)

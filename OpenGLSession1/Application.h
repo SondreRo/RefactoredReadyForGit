@@ -39,5 +39,7 @@ public:
 
 
 	std::shared_ptr<Mesh> FindMesh(std::string DisplayName);
+
+	unsigned int DefaultTexture;
 };
 
